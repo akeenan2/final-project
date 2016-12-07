@@ -83,7 +83,7 @@ FILE = ''
 if __name__ == '__main__':
     # user input
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "u:f:h")
+        opts,args = getopt.getopt(sys.argv[1:], "u:f:h")
     except getopt.GetoptError as err:
         print err
         usage()
