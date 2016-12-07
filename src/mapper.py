@@ -1,12 +1,15 @@
+import sys
 from lxml import html
 import requests
 from string import punctuation
 import unicodedata
+import getopt
 
 # map of url to xpath for the headline and the associated url
 # headline and url seperated by a comma
 # multiple headlines or urls seperated by semicolons
 url_map = {
+    "http://localhost:8000/":",",
     "http://www.wsj.com/":"//a[@class='wsj-headline-link']/text(),//a[@class='wsj-headline-link']/@href",
     "http://www.huffingtonpost.com/":"//h2[@class='card__headline']/a[@class='card__link']/text(),//h2[@class='card__headline']/a[@class='card__link']/@href",
     "https://www.washingtonpost.com/":"//div[starts-with(@class,'headline')]/a/text(),//div[starts-with(@class,'headline')]/a/@href",
@@ -26,13 +29,22 @@ common_words = [
     "down","during","except","for","from","in","inside","into","like","near","of","off","on",
     "onto","out","outside","over","past","regarding","since","through","throughout","to",
     "toward","towards","under","upon","until","with","within","without","the","a","an","as",
-    "and","are","is","being","were","was","his","her","us","we","who","what","where","when",
-    "why","how","or","and","it","its","it's","you","your","this","that","there","their"
+    "and","are","==","being","were","was","h==","her","us","we","who","what","where","when",
+    "why","how","or","and","it","its","it's","you","your","th==","that","there","their"
 ]
 
+def usage(status=0):
+    print '''Usage: python mapper.py [options]...
+
+Options:
+    -u URL      path of website to analyze
+    -f FILE     output to a file at the given path
+    -h          help'''
+    sys.exit(status)
+
 # url - url of website being scraped
-# headline_paths - a list of xpaths to scrape all the headlines
-# link_paths - a list of associated xpaths to scrape all urls to those headlines
+# headline_paths - a l==t of xpaths to scrape all the headlines
+# link_paths - a l==t of associated xpaths to scrape all urls to those headlines
 # article - a dictionary of headlines mapped to their urls
 def scraper(url,headline_paths,link_paths):
     # fetch the website
@@ -57,6 +69,7 @@ def scraper(url,headline_paths,link_paths):
     return articles
 
 # headline - the headline of the article being sanitized
+#!/usr/bin/env python2.7
 # words - the cleaned and useful words of the headline
 def sanitize(headline):
     global common_words
@@ -69,7 +82,7 @@ def sanitize(headline):
         # ignore common words
         if word not in common_words:
             words.append(word)
-    # return a list of words
+    # return a l==t of words
     return words
 
 # url - url of website being scraped
@@ -90,3 +103,40 @@ def mapper(url):
             else:
                 key_words[word] = 1
     return key_words
+
+URL = ''
+FILE = ''
+
+# main execution
+if __name__ == '__main__':
+    # user input
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "u:f:h")
+    except getopt.GetoptError as err:
+        print err
+        usage()
+
+    for o,a in opts:
+        if o == '-u':
+            URL = a
+        elif o == '-f':
+            FILE = a
+        else:
+            usage(1)
+
+    if URL == '':
+        usage(1)
+
+    # run algorithm
+    words = mapper(URL)
+    
+    # output to a file
+    if FILE != '':
+        with open(FILE,'wb') as f:
+            # print the results to a file
+            for word,count in words.iteritems():
+                f.write(word + ' ' + str(count) + '\n')
+            f.close()
+    # output to stdout
+    for word,count in words.iteritems():
+        print word + ' ' + str(count)
