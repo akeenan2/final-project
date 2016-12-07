@@ -7,20 +7,11 @@ def usage(status=0):
     print '''Usage: ./master.py [options]...
 
 Options:
-	-f 			use files
     -h          help'''
     sys.exit(status)
 
 def master():
 	master_dict = Counter()
-
-	with open(FILE,'r+') as f:
-        # build a dictionary from the file
-        for line in f:
-            l = line.split(' ')
-            WORDS[l[0]] = l[1].rstrip()
-        f.close()
-
 	# urls 
 	for url in db.urls:
 		temp_dict = Counter(mapper(url))
@@ -30,9 +21,19 @@ def master():
 	master_dict = sort(master_dict)
 	
 	time.sleep(10)
+#defaults
+
 
 # main execution
 if __name__ == '__main__':
+	#parse options
+	try:
+        opts,args = getopt.getopt(sys.argv[1:], "h")
+    except getopt.GetoptError as err:
+        print err
+        usage()
 
-	while True:
-		master()
+    for o,a in opts:
+    	usage(1)
+	
+	master()
