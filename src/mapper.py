@@ -4,7 +4,7 @@ import requests
 from string import punctuation
 import unicodedata
 import getopt
-import db
+import db # from db.py
 
 def usage(status=0):
     print '''Usage: python mapper.py [options]...
