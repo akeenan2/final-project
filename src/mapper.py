@@ -1,6 +1,6 @@
 from lxml import html
 import requests
-from string import punctuation,maketrans
+from string import punctuation
 import unicodedata
 
 # map of url to xpath for the headline and the associated url
@@ -21,25 +21,13 @@ url_map = {
 
 # common words to ignore
 common_words = [
-    'about','above','across','after','against','along','amid','around','above','at','atop',
-    'before','behind','below','beneath','besides','between','beyond','but','by',
-    'concerning',
-    'down','during',
-    'except',
-    'for','from',
-    'in','inside','into',
-    'like',
-    'near',
-    'of','off','on','onto','out','outside','over',
-    'past',
-    'regarding',
-    'since',
-    'through','throughout','to','toward','towards',
-    'under','underneath','up','upon',
-    'until',
-    'with','within','without',
-    'the','a','an','and','are','is','being','were','was',
-    'his','her','us','we',''
+    "","about","above","across","after","against","along","amid","around","above","at","atop",
+    "before","behind","below","beneath","besides","between","beyond","but","by","concerning",
+    "down","during","except","for","from","in","inside","into","like","near","of","off","on",
+    "onto","out","outside","over","past","regarding","since","through","throughout","to",
+    "toward","towards","under","upon","until","with","within","without","the","a","an","as",
+    "and","are","is","being","were","was","his","her","us","we","who","what","where","when",
+    "why","how","or","and","it","its","it's","you","your","this","that","there","their"
 ]
 
 # url - url of website being scraped
@@ -85,6 +73,7 @@ def sanitize(headline):
     return words
 
 # url - url of website being scraped
+# key_words - map of key words to their frequency
 def mapper(url):
     global url_map
     headline_paths = url_map[url].split(',')[0].split(';')
@@ -101,5 +90,3 @@ def mapper(url):
             else:
                 key_words[word] = 1
     return key_words
-
-print mapper("http://www.wsj.com/")
