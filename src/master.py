@@ -4,6 +4,7 @@ import time
 import getopt
 from collections import Counter
 import db
+import getopt
 from mapper import mapper
 from reducer import reducer
 from sort import sort
@@ -12,6 +13,7 @@ def usage(status=0):
     print '''Usage: ./master.py [options]...
 
 Options:
+	-s SORT 	type of sort to use
     -o          output data to stdout
     -h          help'''
     sys.exit(status)
