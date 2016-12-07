@@ -96,10 +96,6 @@ if __name__ == '__main__':
         else:
             usage(1)
 
-    # if no url or url not in the db
-    if URL == '' or URL not in db.url_map:
-        usage(1)
-
     # use a file as input
     if FILE != '':
         with open(FILE,'rb') as f:
@@ -108,6 +104,9 @@ if __name__ == '__main__':
                 l = line.split(' ')
                 WORDS[l[0]] = WORDS[l[1]]
             f.close()
+    # if no url or url not in the db
+    elif URL == '' or URL not in db.url_map:
+        usage(1)
     # use a url as input, call mapper for the dict
     else:
         WORDS = mapper(URL)
@@ -123,7 +122,7 @@ if __name__ == '__main__':
         sorted_words = bst(WORDS)
     else:
         usage(1)
-        
+
     # print results
     for word in sorted_words:
         print word[0] + ' ' + str(word[1])
