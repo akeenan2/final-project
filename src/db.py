@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 # list of all urls
 urls = {
     "wsj":"http://www.wsj.com/",

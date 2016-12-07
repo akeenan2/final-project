@@ -1,5 +1,6 @@
-#bench.py
-#runs the different sorts on the results of mapper.py and times each one
+#!/usr/bin/env python2.7
+# bench.py
+# runs the different sorts on the results of mapper.py and times each one
 
 import os
 import sys
@@ -13,5 +14,4 @@ SORT = ['quick', 'merge']
 # main execution
 if __name__ == '__main__':
     for s in SORT:
-    	command = "./measure python sort.py -f ../data/wsj-map.txt -s " + s
-    	os.system(command)
+    	os.system("./measure ./sort.py -f ../data/wsj-map.txt -s {}".format(s))

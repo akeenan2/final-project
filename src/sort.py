@@ -1,4 +1,4 @@
-#!/usr/bin python
+#!/usr/bin/env python2.7
 import sys
 import getopt
 from mapper import *
@@ -99,7 +99,8 @@ if __name__ == '__main__':
 
     # use a file as input
     if FILE != '':
-        with open(FILE,'rb') as f:
+        print FILE
+        with open(FILE,'r+') as f:
             # build a dictionary from the file
             for line in f:
                 l = line.split(' ')
