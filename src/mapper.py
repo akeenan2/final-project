@@ -43,7 +43,6 @@ def scraper(url,headline_paths,link_paths):
     return articles
 
 # headline - the headline of the article being sanitized
-#!/usr/bin/env python2.7
 # words - the cleaned and useful words of the headline
 def sanitize(headline):
     global common_words
