@@ -11,7 +11,6 @@ def usage(status=0):
 Options:
     -u URL      url of website to analyze
     -s SORT     sorting algorithm [quick|merge|bst]
-    -f FILE     path to file used as input
     -o          output the data
     -h          help'''
     sys.exit(status)
@@ -101,24 +100,12 @@ if __name__ == '__main__':
             URL = a
         elif o == '-s':
             SORT = a
-        elif o == '-f':
-            FILE = a
         elif o == '-o':
             OUTPUT = True
         else:
             usage(1)
 
-    # use a file as input
-    if FILE != '':
-        #print FILE
-        with open(FILE,'r+') as f:
-            # build a dictionary from the file
-            for line in f:
-                l = line.split(' ')
-                WORDS[l[0]] = l[1].rstrip()
-            f.close()
-    # if no url or url not in the db
-    elif URL == '' or URL not in db.url_map:
+    if URL == '' or URL not in db.url_map:
         usage(1)
     # use a url as input, call mapper for the dict
     else:
