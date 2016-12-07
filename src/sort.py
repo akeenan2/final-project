@@ -6,20 +6,26 @@ import db # from db.py
 
 sys.setrecursionlimit(3000)
 def usage(status=0):
-    print '''Usage: python sort.py [options]...
+    print '''Usage: ./sort.py [options]...
 
 Options:
     -u URL      url of website to analyze
-    -s SORT     sorting algorithm [sort|quick|merge|bst]
+    -s SORT     sorting algorithm [quick|merge|bst]
     -f FILE     path to file used as input
     -o          output the data
     -h          help'''
     sys.exit(status)
 
 # all sorting algorithms return a list of tuples (key word,count)
-# uses built in sorting algorithm
-def sort(words):
-    return sorted(words.items(),key=lambda x:x[1])
+def sort(words,sort_type=''):
+    if sort_type == "quick":
+        return quick(words)
+    elif sort_type == "merge":
+        return merge(words)
+    elif sort_type == "bst":
+        return bst(words)
+    else: # use default
+        return sorted(words.items(),key=lambda x:x[1])
 
 # quick sort
 def quick_help(words):
@@ -76,7 +82,7 @@ def bst(words):
 
 # default values
 URL = ''
-SORT = 'sort'
+SORT = ''
 FILE = ''
 WORDS = dict()
 OUTPUT = False
@@ -118,17 +124,8 @@ if __name__ == '__main__':
     else:
         WORDS = mapper(URL)
 
-    # run the chosen sorting algorithm
-    if SORT == 'sort':
-        sorted_words = sort(WORDS)
-    elif SORT == 'quick':
-        sorted_words = quick_help(WORDS)
-    elif SORT == 'merge':
-        sorted_words = merge_help(WORDS)
-    elif SORT == 'bst':
-        sorted_words = bst(WORDS)
-    else:
-        usage(1)
+    # run the sorting algorithm
+    sorted_words = sort(WORDS,SORT)
 
     # print results
     if OUTPUT:
