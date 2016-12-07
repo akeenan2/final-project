@@ -1,7 +1,4 @@
 #!/usr/bin/env python2.7
-# bench.py
-# runs the different sorts on the results of mapper.py and times each one
-
 import os
 import sys
 import getopt
