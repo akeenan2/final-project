@@ -11,6 +11,7 @@ Options:
     -u URL      url of website to analyze
     -s SORT     sorting algorithm [sort|quick|merge|bst]
     -f FILE     path to file used as input
+    -o          output the data
     -h          help'''
     sys.exit(status)
 
@@ -77,6 +78,7 @@ URL = ''
 SORT = 'sort'
 FILE = ''
 WORDS = dict()
+OUTPUT = False
 
 # main execution
 if __name__ == '__main__':
@@ -94,6 +96,8 @@ if __name__ == '__main__':
             SORT = a
         elif o == '-f':
             FILE = a
+        elif o == '-o':
+            OUTPUT = True
         else:
             usage(1)
 
@@ -126,5 +130,6 @@ if __name__ == '__main__':
         usage(1)
 
     # print results
-    for word in sorted_words:
-        print word[0] + ' ' + str(word[1])
+    if OUTPUT:
+        for word in sorted_words:
+            print word[0] + ' ' + str(word[1])
