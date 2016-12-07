@@ -7,4 +7,3 @@ import db # from db.py
 for name,url in db.urls.iteritems():
     print url
     os.system('python src/mapper.py -u {} -f data/{}-map.txt'.format(url,name))
-

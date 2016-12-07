@@ -26,7 +26,7 @@ def quick_help(words):
         words_list.append(k)
     sorted = quick(words_list, 1)
     return sorted
-#words is now a list not a dict
+# words is now a list not a dict
 def quick(words_list, index):
     if len(words_list) == 0:
         return []
