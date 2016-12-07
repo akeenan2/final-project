@@ -6,15 +6,14 @@ from mapper import *
 import db # from db.py
 
 def usage(status=0):
-    print '''Usage: python generate-maps.py [options]...
+    print '''Usage: ./generate-maps.py [options]...
 
 Options:
     -h          help'''
     sys.exit(status)
 
-#defaults
-SORT = ['sort', 'quick', 'merge', 'bst']
-FILE = ['abcnews', 'dailymail', 'forbes', 'google', 'huffingtonpost', 'nytimes', 'theguardian', 'usatoday', 'washingtonpost', 'wsj']
+# defaults
+SORT = ['sort','quick','merge','bst']
 
 # main execution
 if __name__ == '__main__':
@@ -28,8 +27,6 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for f in FILE:
-    	print f
+    for url in db.urls:
     	for s in SORT:
-    		print s
-    		os.system("./measure ./sort.py -f ../data/{}-map.txt -s {}".format(f, s))
+    		os.system("./measure ./sort.py -f {} -s {}".format(url,s))

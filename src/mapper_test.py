@@ -5,7 +5,7 @@ import getopt
 import db # from db.py
 
 def usage(status=0):
-    print '''Usage: python generate-maps.py [options]...
+    print '''Usage: ./generate-maps.py [options]...
 
 Options:
     -h          help'''
@@ -23,6 +23,6 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for name,url in db.urls.iteritems():
+    for url in db.urls:
         print url
-        os.system('python mapper.py -u {} -f ../data/{}-map.txt'.format(url,name))
+        os.system('python mapper.py -u {} -o'.format(url))

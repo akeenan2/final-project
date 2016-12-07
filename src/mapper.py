@@ -8,17 +8,17 @@ import getopt
 import db # from db.py
 
 def usage(status=0):
-    print '''Usage: python mapper.py [options]...
+    print '''Usage: ./mapper.py [options]...
 
 Options:
     -u URL      path of website to analyze (ex: http://www.wsj.com/)
-    -f FILE     output to a file at the given path
+    -o          output data to stdout
     -h          help'''
     sys.exit(status)
 
 # url - url of website being scraped
-# headline_paths - a l==t of xpaths to scrape all the headlines
-# link_paths - a l==t of associated xpaths to scrape all urls to those headlines
+# headline_paths - a list of xpaths to scrape all the headlines
+# link_paths - a list of associated xpaths to scrape all urls to those headlines
 # article - a dictionary of headlines mapped to their urls
 def scraper(url,headline_paths,link_paths):
     # fetch the website
@@ -77,13 +77,13 @@ def mapper(url):
     return key_words
 
 URL = ''
-FILE = ''
+OUTPUT = False
 
 # main execution
 if __name__ == '__main__':
     # user input
     try:
-        opts,args = getopt.getopt(sys.argv[1:], "u:f:h")
+        opts,args = getopt.getopt(sys.argv[1:], "u:oh")
     except getopt.GetoptError as err:
         print err
         usage()
@@ -91,8 +91,8 @@ if __name__ == '__main__':
     for o,a in opts:
         if o == '-u':
             URL = a
-        elif o == '-f':
-            FILE = a
+        elif o == '-o':
+            OUTPUT = True
         else:
             usage(1)
 
@@ -103,14 +103,7 @@ if __name__ == '__main__':
     # run algorithm
     words = mapper(URL)
     
-    # output to a file
-    if FILE != '':
-        with open(FILE,'wb') as f:
-            # print the results to a file
-            for word,count in words.iteritems():
-                f.write(word + ' ' + str(count) + '\n')
-            f.close()
     # output to stdout
-    else:
+    if OUTPUT:
         for word,count in words.iteritems():
             print word + ' ' + str(count)
