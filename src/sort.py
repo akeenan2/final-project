@@ -1,6 +1,7 @@
 import sys
 import getopt
 from mapper import *
+import db # from db.py
 
 def usage(status=0):
     print '''Usage: python sort.py [options]...
