@@ -1,7 +1,6 @@
-#!/usr/bin/env python2.7
 import sys
-from mapper import *
 import getopt
+from mapper import *
 
 def usage(status=0):
     print '''Usage: python sort.py [options]...
@@ -64,6 +63,10 @@ if __name__ == '__main__':
         else:
             usage(1)
 
+    # if no url or url not in the db
+    if URL == '' or URL not in db.url_map:
+        usage(1)
+
     # use a file as input
     if FILE != '':
         with open(FILE,'rb') as f:
@@ -73,10 +76,9 @@ if __name__ == '__main__':
                 WORDS[l[0]] = WORDS[l[1]]
             f.close()
     # use a url as input, call mapper for the dict
-    elif URL != '':
-        WORDS = mapper(URL)
     else:
-        usage(1)
+        WORDS = mapper(URL)
+
     # run the chosen sorting algorithm
     if SORT == 'sort':
         sorted_words = sort(WORDS)
