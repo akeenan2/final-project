@@ -28,8 +28,8 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for f in FILE:
-    	print f
+    for u in db.urls:
+    	print u
     	for s in SORT:
     		print s
-    		os.system("./measure ./sort.py -f ../data/{}-map.txt -s {}".format(f, s))
+    		os.system("./measure ./sort.py -u {} -s {}".format(u, s))

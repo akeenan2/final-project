@@ -18,9 +18,9 @@ Options:
 # all sorting algorithms return a list of tuples (key word,count)
 def sort(words,sort_type=''):
     if sort_type == "quick":
-        return quick(words)
+        return quick_help(words)
     elif sort_type == "merge":
-        return merge(words)
+        return merge_help(words)
     elif sort_type == "bst":
         return bst(words)
     else: # use default
@@ -80,11 +80,14 @@ def bst(words):
     
     global tuple_list
     #initializes the root of the tree
-    root = Node(words[0], words[words[0]])
+    key, value = words.popitem()
+    root = Node(key, value)
 
     # Constructs the tree
-    for keys in words:
-        bst_insert(root,Node(words[keys],words[words[keys]]))
+    items = len(words)
+    for i in range(items):
+        key, value = words.popitem()
+        bst_insert(root,Node(key,value))
 
     # Creates a tuple List in order
     in_order(root)
@@ -113,8 +116,6 @@ def bst_insert(root,new_node):
             else:
                 bst_insert(root.right, new_node)
 
-tuple_list = []
-
 def in_order(root):
     global tuple_list
 
@@ -122,7 +123,7 @@ def in_order(root):
         return
 
     in_order(root.left)
-    tuple_list.append(root.key,root.value)
+    tuple_list.append((root.key,root.val))
     in_order(root.right)
 
 
@@ -132,6 +133,7 @@ SORT = ''
 FILE = ''
 WORDS = dict()
 OUTPUT = False
+tuple_list = []
 
 # main execution
 if __name__ == '__main__':
