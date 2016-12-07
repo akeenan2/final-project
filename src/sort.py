@@ -19,8 +19,22 @@ def sort(words):
     return sorted(words.items(),key=lambda x:x[1])
 
 # quick sort
-def quick(words):
-    return words
+def quick_help(words):
+    words_list = []
+    for i in words:
+        k = (i, words[i])
+        words_list.append(k)
+    sorted = quick(words_list, 1)
+    return sorted
+#words is now a list not a dict
+def quick(words_list, index):
+    if len(words_list) == 0:
+        return []
+    else:
+        pivot = words_list[0]
+        lesser = quick([x for x in words_list[1:] if x[index] < pivot[index]], index)
+        greater = quick([x for x in words_list[1:] if x[index] >= pivot[index]], index)
+        return lesser + [pivot] + greater
 
 # merge sort
 def merge(words):
@@ -71,11 +85,12 @@ if __name__ == '__main__':
     else:
         WORDS = mapper(URL)
 
+    print WORDS
     # run the chosen sorting algorithm
     if SORT == 'sort':
         sorted_words = sort(WORDS)
     elif SORT == 'quick':
-        sorted_words = quick(WORDS)
+        sorted_words = quick_help(WORDS)
     elif SORT == 'merge':
         sorted_words = merge(WORDS)
     elif SORT == 'bst':
