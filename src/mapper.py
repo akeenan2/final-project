@@ -20,6 +20,8 @@ Options:
 # link_paths - a l==t of associated xpaths to scrape all urls to those headlines
 # article - a dictionary of headlines mapped to their urls
 def scraper(url,headline_paths,link_paths):
+    print headline_paths
+    print link_paths
     # fetch the website
     page = requests.get(url)
     tree = html.fromstring(page.content)
@@ -61,8 +63,9 @@ def sanitize(headline):
 # url - url of website being scraped
 # key_words - map of key words to their frequency
 def mapper(url):
-    headline_paths = db.url_map[url].split(',')[0].split(';')
-    url_paths = db.url_map[url].split(',')[1].split(';')
+    print db.url_map[url]
+    headline_paths = db.url_map[url].split(';')[0].split('|')
+    url_paths = db.url_map[url].split(';')[1].split('|')
     articles = scraper(url,headline_paths,url_paths)
     # store the key words mapped to a count of the number of times repeated
     key_words = dict()
