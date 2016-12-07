@@ -1,17 +1,17 @@
 #!/usr/bin/env python2.7
 # list of all urls
-urls = {
-    "wsj":"http://www.wsj.com/",
-    "huffingtonpost":"http://www.huffingtonpost.com/",
-    "washingtonpost":"https://www.washingtonpost.com/",
-    "nytimes":"http://www.nytimes.com/",
-    "theguardian":"https://www.theguardian.com/us/",
-    "usatoday":"http://www.usatoday.com/",
-    "dailymail":"http://www.dailymail.co.uk/ushome/index.html/",
-    "abcnews":"http://abcnews.go.com/",
-    "google":"https://news.google.com/",
-    "forbes":"http://www.forbes.com/",
-}
+urls = [
+    "http://www.wsj.com/",
+    "http://www.huffingtonpost.com/",
+    "https://www.washingtonpost.com/",
+    "http://www.nytimes.com/",
+    "https://www.theguardian.com/us/",
+    "http://www.usatoday.com/",
+    "http://www.dailymail.co.uk/ushome/index.html/",
+    "http://abcnews.go.com/",
+    "https://news.google.com/",
+    "http://www.forbes.com/"
+]
 
 # map of url to xpath for the headline and the associated url
 # headline and url seperated by a comma
@@ -37,5 +37,7 @@ common_words = [
     "outside","over","past","regarding","since","through","throughout","to","toward","towards",
     "upon","until","with","within","the","a","an","as","and","are","is","be","being","were",
     "was","his","her","us","we","who","what","where","when","why","how","or","and","it","its",
-    "it's","you","your","this","that","there","their","i","do","don't","he's","she's","he","she"
+    "it's","you","your","this","that","there","their","i","do","don't","he's","she's","he","she",
+    "says","will","won't","can","can't","could","couldn't","they","they're","make","not","no",
+    "nor","all","only","than","then","been","very","my","mine","may"
 ]

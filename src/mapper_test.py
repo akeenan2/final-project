@@ -2,19 +2,14 @@
 import os
 import sys
 import getopt
-from mapper import *
 import db # from db.py
 
 def usage(status=0):
-    print '''Usage: python generate-maps.py [options]...
+    print '''Usage: ./generate-maps.py [options]...
 
 Options:
     -h          help'''
     sys.exit(status)
-
-#defaults
-SORT = ['sort', 'quick', 'merge', 'bst']
-FILE = ['abcnews', 'dailymail', 'forbes', 'google', 'huffingtonpost', 'nytimes', 'theguardian', 'usatoday', 'washingtonpost', 'wsj']
 
 # main execution
 if __name__ == '__main__':
@@ -28,8 +23,6 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for u in db.urls:
-    	print u
-    	for s in SORT:
-    		print s
-    		os.system("./measure ./sort.py -u {} -s {}".format(u, s))
+    for url in db.urls:
+        print url
+        os.system('python mapper.py -u {} -o'.format(url))
