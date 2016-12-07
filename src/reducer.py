@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 import sys
 import getopt
-import db # from db.py
+import db
 
 def usage(status=0):
     print '''Usage: ./reducer.py [options]...
@@ -14,11 +14,11 @@ Options:
 # words = dict of all key words to their frequency
 def reducer(words):
     compiled_words = dict()
-    for word in words:
-        if word[0] in compiled_words:
-            compiled_words[word[0]] += word[1]
+    for word,count in words.iteritems():
+        if word in compiled_words:
+            compiled_words[word] += count
         else:
-            compiled_words[word[0]] = word[1]
+            compiled_words[word] = count
     return compiled_words
 
 # main execution

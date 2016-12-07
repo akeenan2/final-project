@@ -1,8 +1,8 @@
 #!/usr/bin/env python2.7
 import os
 import sys
+sys.path.insert(0,'../src')
 import getopt
-from mapper import *
 import db
 
 def usage(status=0):
@@ -11,9 +11,6 @@ def usage(status=0):
 Options:
     -h          help'''
     sys.exit(status)
-
-# defaults
-SORT = ['sort','quick','merge','bst']
 
 # main execution
 if __name__ == '__main__':
@@ -28,5 +25,5 @@ if __name__ == '__main__':
             usage(1)
 
     for url in db.urls:
-    	for s in SORT:
-    		os.system("./measure ./sort.py -f {} -s {}".format(url,s))
+        print url
+        os.system('python mapper.py -u {} -o'.format(url))

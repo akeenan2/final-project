@@ -5,7 +5,7 @@ import requests
 from string import punctuation
 import unicodedata
 import getopt
-import db # from db.py
+import db
 
 def usage(status=0):
     print '''Usage: ./mapper.py [options]...
@@ -55,7 +55,7 @@ def sanitize(headline):
         # ignore common words
         if word not in db.common_words:
             words.append(word)
-    # return a l==t of words
+    # return a listt of words
     return words
 
 # url - url of website being scraped

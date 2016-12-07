@@ -1,8 +1,9 @@
 #!/usr/bin/env python2.7
 import os
 import sys
+sys.path.insert(0,'../src')
 import getopt
-import db # from db.py
+import db
 
 def usage(status=0):
     print '''Usage: ./generate-maps.py [options]...
