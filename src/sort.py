@@ -1,9 +1,10 @@
 #!/usr/bin/env python2.7
 import sys
 from mapper import *
+import getopt
 
 def usage(status=0):
-    print '''Usage: python sort.py directory [options]...
+    print '''Usage: python sort.py [options]...
 
 Options:
     -u URL      url of website to analyze
@@ -55,7 +56,7 @@ if __name__ == '__main__':
             usage(1)
 
     # use a file as input
-    if FILE is not '':
+    if FILE != '':
         with open(FILE,'rb') as f:
             # build a dictionary from the file
             for line in f:
@@ -63,18 +64,18 @@ if __name__ == '__main__':
                 WORDS[l[0]] = WORDS[l[1]]
             f.close()
     # use a url as input, call mapper for the dict
-    elif URL is not '':
+    elif URL != '':
         WORDS = mapper(URL)
     else:
         usage(1)
     # run the chosen sorting algorithm
-    if SORT is 'sort':
+    if SORT == 'sort':
         sorted_words = sort(WORDS)
-    elif SORT is 'quick':
+    elif SORT == 'quick':
         sorted_words = quick(WORDS)
-    elif SORT is 'merge':
+    elif SORT == 'merge':
         sorted_words = merge(WORDS)
-    elif SORT is 'bst':
+    elif SORT == 'bst':
         sorted_words = bst(WORDS)
     else:
         usage(1)
