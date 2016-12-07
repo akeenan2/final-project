@@ -19,7 +19,12 @@ def sort(words):
 
 # quick sort
 def quick_help(words):
-    quick(words.items, 0)
+    words_list = []
+    for i in words:
+        k = (i, words[i])
+        words_list.append(k)
+    sorted = quick(words_list, 1)
+    return sorted
 #words is now a list not a dict
 def quick(words_list, index):
     if len(words_list) == 0:
@@ -79,6 +84,7 @@ if __name__ == '__main__':
     else:
         WORDS = mapper(URL)
 
+    print WORDS
     # run the chosen sorting algorithm
     if SORT == 'sort':
         sorted_words = sort(WORDS)
