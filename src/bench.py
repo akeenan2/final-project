@@ -13,5 +13,5 @@ SORT = ['quick', 'merge']
 # main execution
 if __name__ == '__main__':
     for s in SORT:
-    	command = "time python sort.py -f ../data/wsj-map.txt -s " + s
+    	command = "./measure python sort.py -f ../data/wsj-map.txt -s " + s
     	os.system(command)
