@@ -6,7 +6,7 @@ import getopt
 import db
 
 def usage(status=0):
-    print '''Usage: ./generate-maps.py [options]...
+    print '''Usage: ./reducer_test.py [options]...
 
 Options:
     -h          help'''

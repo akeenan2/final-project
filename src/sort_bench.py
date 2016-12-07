@@ -6,7 +6,7 @@ from mapper import *
 import db
 
 def usage(status=0):
-    print '''Usage: ./generate-maps.py [options]...
+    print '''Usage: ./sort_bench.py [options]...
 
 Options:
     -h          help'''

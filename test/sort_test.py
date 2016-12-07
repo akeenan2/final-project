@@ -6,7 +6,7 @@ import getopt
 import db
 
 def usage(status=0):
-    print '''Usage: ./mapper_test.py [options]...
+    print '''Usage: ./sort_test.py [options]...
 
 Options:
     -h          help'''
@@ -23,7 +23,3 @@ if __name__ == '__main__':
     for o,a in opts:
         if o == '-h':
             usage(1)
-
-    for url in db.urls:
-        print url
-        os.system('python mapper.py -u {} -o'.format(url))
