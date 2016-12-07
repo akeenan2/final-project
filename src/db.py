@@ -35,6 +35,6 @@ common_words = [
     "down","during","except","for","from","in","inside","into","like","near","of","off","on",
     "onto","out","outside","over","past","regarding","since","through","throughout","to",
     "toward","towards","under","upon","until","with","within","without","the","a","an","as",
-    "and","are","==","being","were","was","h==","her","us","we","who","what","where","when",
-    "why","how","or","and","it","its","it's","you","your","th==","that","there","their"
+    "and","are","is","being","were","was","his","her","us","we","who","what","where","when",
+    "why","how","or","and","it","its","it's","you","your","this","that","there","their"
 ]
