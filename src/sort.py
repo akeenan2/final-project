@@ -19,8 +19,17 @@ def sort(words):
     return sorted(words.items(),key=lambda x:x[1])
 
 # quick sort
-def quick(words):
-    return words
+def quick_help(words):
+    quick(words.items, 0)
+#words is now a list not a dict
+def quick(words_list, index):
+    if len(words_list) == 0:
+        return []
+    else:
+        pivot = words_list[0]
+        lesser = quick([x for x in words_list[1:] if x[index] < pivot[index]], index)
+        greater = quick([x for x in words_list[1:] if x[index] >= pivot[index]], index)
+        return lesser + [pivot] + greater
 
 # merge sort
 def merge(words):
@@ -72,7 +81,7 @@ if __name__ == '__main__':
     if SORT == 'sort':
         sorted_words = sort(WORDS)
     elif SORT == 'quick':
-        sorted_words = quick(WORDS)
+        sorted_words = quick_help(WORDS)
     elif SORT == 'merge':
         sorted_words = merge(WORDS)
     elif SORT == 'bst':
