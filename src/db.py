@@ -1,5 +1,4 @@
 #!/usr/bin/env python2.7
-
 # list of all urls
 urls = {
     "wsj":"http://www.wsj.com/",
@@ -32,12 +31,11 @@ url_map = {
 
 # common words to ignore
 common_words = [
-    "","about","above","across","after","against","along","amid","around","above","at","atop",
-    "before","behind","below","beneath","besides","between","beyond","but","by","concerning",
-    "down","during","except","for","from","in","inside","into","like","near","of","off","on",
-    "onto","out","outside","over","past","regarding","since","through","throughout","to",
-    "toward","towards","under","upon","until","with","within","without","the","a","an","as",
-    "and","are","is","be","being","were","was","his","her","us","we","who","what","where","when",
-    "why","how","or","and","it","its","it's","you","your","this","that","there","their","i",
-    "do","don't","he's","she's","he","she"
+    "","about","above","across","after","along","amid","around","above","at","atop","before",
+    "behind","below","beneath","besides","between","beyond","but","by","concerning","down",
+    "during","except","for","from","in","into","like","near","of","off","on","onto","out",
+    "outside","over","past","regarding","since","through","throughout","to","toward","towards",
+    "upon","until","with","within","the","a","an","as","and","are","is","be","being","were",
+    "was","his","her","us","we","who","what","where","when","why","how","or","and","it","its",
+    "it's","you","your","this","that","there","their","i","do","don't","he's","she's","he","she"
 ]
