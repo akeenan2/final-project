@@ -112,7 +112,6 @@ if __name__ == '__main__':
     else:
         WORDS = mapper(URL)
 
-    #print WORDS
     # run the chosen sorting algorithm
     if SORT == 'sort':
         sorted_words = sort(WORDS)
@@ -124,6 +123,7 @@ if __name__ == '__main__':
         sorted_words = bst(WORDS)
     else:
         usage(1)
+        
     # print results
     for word in sorted_words:
         print word[0] + ' ' + str(word[1])

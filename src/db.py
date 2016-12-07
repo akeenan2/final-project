@@ -25,7 +25,7 @@ url_map = {
     "http://www.dailymail.co.uk/ushome/index.html/":"//h2[contains(@class,'linkro-darkred')]/a/text();//h2[contains(@class,'linkro-darkred')]/a/@href",
     "http://abcnews.go.com/":"//div[contains(@class,'headlines-li-div')]/h1/a/text()|//div[contains(@class,'caption-wrapper')]/h1/a/text();//div[contains(@class,'headlines-li-div')]/h1/a/@href|//div[contains(@class,'caption-wrapper')]/h1/a/@href",
     "https://news.google.com/":"//h2[contains(@class,'esc-lead-article-title')]/a/span/text();//h2[contains(@class,'esc-lead-article-title')]/a/@href",
-    "http://www.forbes.com/":"//h4[contains(@class,'editable-hed')]/a/text();//h4[contains(@class,'editable-hed')]/a/@href",
+    "http://www.forbes.com/":"//h4[contains(@class,'editable-hed')]/a/text()|//li[contains(@class,'edittools-contentitem')]/h3/a/text();//h4[contains(@class,'editable-hed')]/a/@href|//li[contains(@class,'edittools-contentitem')]/h3/a/@href",
 }
 
 # common words to ignore
@@ -35,6 +35,7 @@ common_words = [
     "down","during","except","for","from","in","inside","into","like","near","of","off","on",
     "onto","out","outside","over","past","regarding","since","through","throughout","to",
     "toward","towards","under","upon","until","with","within","without","the","a","an","as",
-    "and","are","is","being","were","was","his","her","us","we","who","what","where","when",
-    "why","how","or","and","it","its","it's","you","your","this","that","there","their","i"
+    "and","are","is","be","being","were","was","his","her","us","we","who","what","where","when",
+    "why","how","or","and","it","its","it's","you","your","this","that","there","their","i",
+    "do","don't","he's","she's","he","she"
 ]
