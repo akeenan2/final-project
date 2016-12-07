@@ -33,8 +33,8 @@ def quick_help(words):
     for i in words:
         k = (i, words[i])
         words_list.append(k)
-    sorted = quick(words_list)
-    return sorted
+    sorted_list = quick(words_list)
+    return sorted_list
 # convert to a list
 def quick(words_list):
     if len(words_list) == 0:
@@ -52,8 +52,8 @@ def merge_help(words):
     for i in words:
         k = (i, words[i])
         words_list.append(k)
-    sorted = mergesort(words_list)
-    return sorted
+    sorted_list = mergesort(words_list)
+    return sorted_list
 def merge(left, right):
     result = []
     i ,j = 0, 0
@@ -75,9 +75,56 @@ def mergesort(list):
     right = mergesort(list[middle:])
     return merge(left, right)
 
-# binary tree/bst
+
 def bst(words):
-    return words
+    
+    global tuple_list
+    #initializes the root of the tree
+    root = Node(words[0], words[words[0]])
+
+    # Constructs the tree
+    for keys in words:
+        bst_insert(root,Node(words[keys],words[words[keys]]))
+
+    # Creates a tuple List in order
+    in_order(root)
+
+    return tuple_list
+
+class Node:
+    def __init__(self, key, val):
+        self.left = None
+        self.right = None
+        self.key = key
+        self.val = val 
+
+def bst_insert(root,new_node):
+    if root is None:
+        root = new_node
+    else:
+        if root.val > new_node.val:
+            if root.left is None:
+                root.left = new_node
+            else:
+                bst_insert(root.left, new_node)
+        else:
+            if root.right is None:
+                root.right = new_node
+            else:
+                bst_insert(root.right, new_node)
+
+tuple_list = []
+
+def in_order(root):
+    global tuple_list
+
+    if not root:
+        return
+
+    in_order(root.left)
+    tuple_list.append(root.key,root.value)
+    in_order(root.right)
+
 
 # default values
 URL = ''
@@ -90,7 +137,7 @@ OUTPUT = False
 if __name__ == '__main__':
     # user input
     try:
-        opts,args = getopt.getopt(sys.argv[1:], "u:s:f:oh")
+        opts,args = getopt.getopt(sys.argv[1:], "u:s:oh")
     except getopt.GetoptError as err:
         print err
         usage()
@@ -118,3 +165,4 @@ if __name__ == '__main__':
     if OUTPUT:
         for word in sorted_words:
             print word[0] + ' ' + str(word[1])
+
