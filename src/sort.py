@@ -4,6 +4,7 @@ import getopt
 from mapper import *
 import db # from db.py
 
+sys.setrecursionlimit(3000)
 def usage(status=0):
     print '''Usage: python sort.py [options]...
 
@@ -103,7 +104,7 @@ if __name__ == '__main__':
 
     # use a file as input
     if FILE != '':
-        print FILE
+        #print FILE
         with open(FILE,'r+') as f:
             # build a dictionary from the file
             for line in f:

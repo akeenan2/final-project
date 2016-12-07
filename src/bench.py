@@ -13,7 +13,8 @@ Options:
     sys.exit(status)
 
 #defaults
-SORT = ['quick', 'merge']
+SORT = ['sort', 'quick', 'merge', 'bst']
+FILE = ['abcnews', 'dailymail', 'forbes', 'google', 'huffingtonpost', 'nytimes', 'theguardian', 'usatoday', 'washingtonpost', 'wsj']
 
 # main execution
 if __name__ == '__main__':
@@ -27,5 +28,8 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for s in SORT:
-    	os.system("./measure ./sort.py -f ../data/wsj-map.txt -s {}".format(s))
+    for f in FILE:
+    	print f
+    	for s in SORT:
+    		print s
+    		os.system("./measure ./sort.py -f ../data/{}-map.txt -s {}".format(f, s))
