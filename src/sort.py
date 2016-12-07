@@ -102,7 +102,7 @@ if __name__ == '__main__':
             # build a dictionary from the file
             for line in f:
                 l = line.split(' ')
-                WORDS[l[0]] = WORDS[l[1]]
+                WORDS[l[0]] = l[1].rstrip()
             f.close()
     # if no url or url not in the db
     elif URL == '' or URL not in db.url_map:
