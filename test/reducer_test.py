@@ -25,5 +25,4 @@ if __name__ == '__main__':
             usage(1)
 
     for url in db.urls:
-        print url
-        os.system('python mapper.py -u {} -o'.format(url))
+        os.system('python src/reducer.py -u {} -o'.format(url))

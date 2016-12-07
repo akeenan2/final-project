@@ -23,3 +23,6 @@ if __name__ == '__main__':
     for o,a in opts:
         if o == '-h':
             usage(1)
+
+    for url in db.urls:
+        os.system('python src/sort.py -u {} -o'.format(url))

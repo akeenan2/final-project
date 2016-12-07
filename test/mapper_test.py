@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 import os
 import sys
-sys.path.insert(0,'../src')
+sys.path.insert(0,'src')
 import getopt
 import db
 
@@ -25,5 +25,4 @@ if __name__ == '__main__':
             usage(1)
 
     for url in db.urls:
-        print url
-        os.system('python mapper.py -u {} -o'.format(url))
+        os.system('python src/mapper.py -u {} -o'.format(url))
