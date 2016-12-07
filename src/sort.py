@@ -20,25 +20,52 @@ def sort(words):
 
 # quick sort
 def quick_help(words):
+    #need to convert words dict to a list so we can sort it
     words_list = []
     for i in words:
         k = (i, words[i])
         words_list.append(k)
-    sorted = quick(words_list, 1)
+    sorted = quick(words_list)
     return sorted
-# words is now a list not a dict
-def quick(words_list, index):
+# convert to a list
+def quick(words_list):
     if len(words_list) == 0:
         return []
     else:
         pivot = words_list[0]
-        lesser = quick([x for x in words_list[1:] if x[index] < pivot[index]], index)
-        greater = quick([x for x in words_list[1:] if x[index] >= pivot[index]], index)
+        lesser = quick([x for x in words_list[1:] if x[1] < pivot[1]])
+        greater = quick([x for x in words_list[1:] if x[1] >= pivot[1]])
         return lesser + [pivot] + greater
 
 # merge sort
-def merge(words):
-    return words
+def merge_help(words):
+    # convert dict to a list
+    words_list = []
+    for i in words:
+        k = (i, words[i])
+        words_list.append(k)
+    sorted = mergesort(words_list)
+    return sorted
+def merge(left, right):
+    result = []
+    i ,j = 0, 0
+    while i < len(left) and j < len(right):
+        if left[i][1] <= right[j][1]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result += left[i:]
+    result += right[j:]
+    return result
+def mergesort(list):
+    if len(list) < 2:
+        return list
+    middle = len(list) / 2
+    left = mergesort(list[:middle])
+    right = mergesort(list[middle:])
+    return merge(left, right)
 
 # binary tree/bst
 def bst(words):
@@ -85,14 +112,14 @@ if __name__ == '__main__':
     else:
         WORDS = mapper(URL)
 
-    print WORDS
+    #print WORDS
     # run the chosen sorting algorithm
     if SORT == 'sort':
         sorted_words = sort(WORDS)
     elif SORT == 'quick':
         sorted_words = quick_help(WORDS)
     elif SORT == 'merge':
-        sorted_words = merge(WORDS)
+        sorted_words = merge_help(WORDS)
     elif SORT == 'bst':
         sorted_words = bst(WORDS)
     else:
