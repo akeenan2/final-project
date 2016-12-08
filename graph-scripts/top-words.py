@@ -16,12 +16,11 @@ counts = np.array(counts)
 
 # create plot
 y_pos = np.arange(len(words))
-plt.barh(y_pos,counts,align='center',alpha=0.5,color="#ff5066")
+plt.barh(y_pos,counts,align='center',alpha=0.8,color="#ff5066")
 plt.yticks(y_pos,words)
 
 # add labels
-plt.xlabel('Key Word')
-plt.ylabel('Word Count')
+plt.xlabel('Word Count')
 plt.title('Top Key Words')
 plt.savefig('graphs/top-words.png')
 plt.show()

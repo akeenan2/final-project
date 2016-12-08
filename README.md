@@ -5,6 +5,11 @@ Find the trending news articles from various sources by map reducing their headl
 
 # Installation
 
+The program runs on python2.7, which can be installed on the [official website]. Required packages may be installed with the [pip installer].
+
+[official website]:https://www.python.org/download/releases/2.7/
+[pip installer]:https://pypi.python.org/pypi/pip
+
 For the program to fully compile, the lxml and requests libraries are required, and can be installed with:
 
     pip install lxml
