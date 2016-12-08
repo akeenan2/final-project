@@ -1,4 +1,4 @@
-test: test-mapper test-reducer test-sort test-master
+test: test-mapper test-sort test-master
 
 test-mapper:
 	@echo Testing mapper...

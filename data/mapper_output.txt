@@ -1,5 +1,36 @@
-Pearl Harbor 75 years later Recalls a Shocking Attack
-Donald Trump Named Time Person of the Year 2016
-Donald Trump Taps Oklahoma Attorney General Scott Pruitt to Lead EPA
-Samsung scores unanimous Supreme Court win over Apple
-Nokia Town Seeks Rebirth After Company’s Retreat
+2016 1
+75 1
+apple 1
+attack 1
+attorney 1
+companys 1
+court 1
+donald 2
+epa 1
+general 1
+harbor 1
+later 1
+lead 1
+named 1
+nokia 1
+oklahoma 1
+pearl 1
+person 1
+pruitt 1
+rebirth 1
+recalls 1
+retreat 1
+samsung 1
+scores 1
+scott 1
+seeks 1
+shocking 1
+supreme 1
+taps 1
+time 1
+town 1
+trump 2
+unanimous 1
+win 1
+year 1
+years 1
