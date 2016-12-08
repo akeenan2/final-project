@@ -5,6 +5,7 @@ from collections import Counter
 import db
 from mapper import mapper
 from sort import sort
+import getopt
 
 def usage(status=0):
     print '''Usage: ./master.py [options]...
