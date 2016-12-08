@@ -13,6 +13,7 @@ def usage(status=0):
 Options:
 	-u URLS     list of urls 
     -o          output data to stdout
+    -p          print counts of top ten if set
     -h          help'''
     sys.exit(status)
 
@@ -27,12 +28,12 @@ def master(urls):
     return master
 
 OUTPUT = False
-
+PRINT = False
 # main execution
 if __name__ == '__main__':
     # parse options
     try:
-        opts,args = getopt.getopt(sys.argv[1:], "oh")
+        opts,args = getopt.getopt(sys.argv[1:], "ohp")
     except getopt.GetoptError as err:
         print err
         usage()
@@ -40,6 +41,8 @@ if __name__ == '__main__':
     for o,a in opts:
         if o == '-o':
             OUTPUT = True
+        elif o == '-p':
+        	PRINT = True
         else:
             usage(1)
     # call master function
@@ -50,7 +53,11 @@ if __name__ == '__main__':
         for word in words:
             print word[0] + ' ' + str(word[1])
     # pull out top 10 most frequent words
-    print "Top Words:"
-    trending = words[:-11:-1]
+    #print "Top Words:"
+    trending = words[:-6:-1]
     for word in trending:
-    	print word[0] + ' ' + str(word[1])
+    	if PRINT:
+    		print word[0] + ' ' + str(word[1])
+    	else:
+    		print word[0]
+    
