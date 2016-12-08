@@ -48,7 +48,13 @@ if __name__ == '__main__':
             usage(1)
     # call master function
     words = master()
+
     # print results
     if OUTPUT:
         for word in words:
             print word[0] + ' ' + str(word[1])
+    # pull out top 10 most frequent words
+    print "Top Words:"
+    trending = words[:-11:-1]
+    for word in trending:
+    	print word[0] + ' ' + str(word[1])
