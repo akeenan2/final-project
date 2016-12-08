@@ -22,7 +22,6 @@ def scraper(url,headline_paths,link_paths):
     # select all linked headers
     for path in headline_paths:
         headlines = headlines + tree.xpath(path)
-        print tree.xpath(path)
     for link in link_paths:
         links = links + tree.xpath(link)
 

@@ -69,7 +69,6 @@ def mergesort(list):
 
 
 def bst(words):
-    
     global tuple_list
     #initializes the root of the tree
     key, value = words.popitem()
