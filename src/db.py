@@ -17,6 +17,8 @@ urls = [
 # headline and url seperated by a comma
 # multiple headlines or urls seperated by semicolons
 url_map = {
+    "http://michaelsills.com/sample_links.html":"//a/text();//a/@href",
+    "http://michaelsills.com/sample_links_2.html":"//a/text();//a/@href",
     "http://www.wsj.com/":"//a[contains(@class,'wsj-headline-link')]/text();//a[contains(@class,'wsj-headline-link')]/@href",
     "http://www.huffingtonpost.com/":"//h2[contains(@class,'card__headline')]/a[contains(@class,'card__link')]/text();//h2[contains(@class,'card__headline')]/a[contains(@class,'card__link')]/@href",
     "https://www.washingtonpost.com/":"//div[contains(@class,'headline')]/a/text();//div[contains(@class,'headline')]/a/@href",
