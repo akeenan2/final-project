@@ -15,7 +15,8 @@ test-master:
 	@echo Testing master...
 	@./test/master_test.py | sort > data/master_output_test.txt
 	@diff --suppress-common-lines -y  data/master_output_test.txt data/master_output.txt
-	@./test/check_sort.py -f master_output_test.txt
+	@./test/master_test.py > data/master_output_test.txt
+	@./test/check_sort.py -f data/master_output_test.txt
 	@rm data/master_output_test.txt
 
 bench:

@@ -37,7 +37,7 @@ if __name__ == '__main__':
         for url in db.urls:
             # run the bench script
             if OUTPUT:
-                os.system("./src/measure ./test/run_sort.py -u {} -s {} -o".format(url,sort))
+                os.system("./test/measure ./test/run_sort.py -u {} -s {} -o".format(url,sort))
             else:
-                os.system("./src/measure ./test/run_sort.py -u {} -s {}".format(url,sort))
+                os.system("./test/measure ./test/run_sort.py -u {} -s {}".format(url,sort))
         print '\n',
