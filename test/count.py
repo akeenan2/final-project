@@ -4,6 +4,7 @@ import sys
 sys.path.insert(0,'src')
 import getopt
 from mapper import mapper
+import db
 
 def usage(status=0):
     print '''Usage: ./mapper_test.py [options]...
@@ -26,6 +27,7 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    words = mapper('http://michaelsills.com/sample_links.html')
-    for word,count in words.iteritems():
-            print word + ' ' + str(count)
+    for url in db.urls:
+        words = mapper(url)
+        print url + '\t' + str(len(words))
+        

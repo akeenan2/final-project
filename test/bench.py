@@ -32,14 +32,12 @@ if __name__ == '__main__':
         else:
             usage(1)
 
-    
-    for url in db.urls:
-        print url
-        for sort in SORTS:
+    for sort in SORTS:
+        for url in db.urls:
+            # run the bench script 5x
             for i in range(5):
-                # run the bench script 5x
                 if OUTPUT:
                     os.system("./test/measure ./test/run_sort.py -u {} -s {} -o".format(url,sort))
                 else:
                     os.system("./test/measure ./test/run_sort.py -u {} -s {}".format(url,sort))
-        print '\n',
+                    

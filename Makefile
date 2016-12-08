@@ -21,3 +21,7 @@ test-master:
 
 bench:
 	@./test/bench.py
+
+key-words:
+	@./src/master.py -n 11 > graph-scripts/top-words.txt
+	@./graph-scripts/top-words.py
