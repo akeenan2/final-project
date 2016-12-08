@@ -22,8 +22,8 @@ Options:
 def search(keywords):
     url = "https://news.google.com/#q="
     for word in keywords[:-1]:
-        url = url + word + '+'
-    url = url + word
+        url = url + word[0] + '+'
+    url = url + word[0]
     # fetch the website
     page = requests.get(url)
     tree = html.fromstring(page.content)
@@ -33,9 +33,9 @@ def search(keywords):
 
     headline = tree.xpath("//h2[contains(@class,'esc-lead-article-title')]/a/span/text()")
     link = tree.xpath("//h2[contains(@class,'esc-lead-article-title')]/a/@href")
-
-    print headline[0]
-    print link[0]
+    for i in range(10):
+    	print headline[i]
+    	print link[i]
 
 def master(urls):
     master = Counter()
@@ -80,4 +80,5 @@ if __name__ == '__main__':
     		print word[0] + ' ' + str(word[1])
     	else:
     		print word[0]
+    search(trending)
     
