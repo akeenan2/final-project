@@ -41,5 +41,6 @@ common_words = [
     "was","his","her","us","up","we","who","what","where","when","why","how","or","and","it","its",
     "it's","you","your","this","that","there","their","i","do","don't","he's","she's","he","she",
     "says","will","won't","can","can't","could","couldn't","they","they're","make","not","no",
-    "nor","all","only","than","then","been","very","my","mine","me","may","new","one","two","has","him",
+    "nor","all","only","than","then","been","very","my","mine","me","may","new","one","two","has",
+    "him","woman","man","have","had",
 ]
