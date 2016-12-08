@@ -5,7 +5,7 @@ import numpy as np
 # data to plot
 words = []
 counts = []
-with open('graph-scripts/top-words.txt','r') as f:
+with open('data/top-words.txt','r') as f:
     for line in f:
         l = line.rstrip().split(' ')
         words.append(l[0])

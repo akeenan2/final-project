@@ -7,8 +7,8 @@ sizes = (125,174,256,268,400,470,492,502,528,1708)
 colors = ('#ef3cc7','#36e5cf','#cd6df3','#0cde70')
 
 all_benches = []
-#with open('graph-scripts/bench-memory.txt','r') as f:
-with open('graph-scripts/bench-time.txt','r') as f:
+#with open('data/bench-memory.txt','r') as f:
+with open('data/bench-time.txt','r') as f:
     bench = [] # store either the array of memory or times
     count = 0
     for line in f:
