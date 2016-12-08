@@ -4,11 +4,14 @@ import sys
 sys.path.insert(0,'src')
 import getopt
 import db
+from mapper import mapper
 
 def usage(status=0):
     print '''Usage: ./mapper_test.py [options]...
 
 Options:
+    -u URL      path of website to analyze (ex: http://www.wsj.com/)
+    -o          output data to stdout
     -h          help'''
     sys.exit(status)
 
@@ -24,5 +27,6 @@ if __name__ == '__main__':
         if o == '-h':
             usage(1)
 
-    for url in db.urls:
-        os.system('python src/mapper.py -u {} -o'.format(url))
+    words = mapper('http://michaelsills.com/sample_links.html')
+    for word,count in words.iteritems():
+            print word + ' ' + str(count)

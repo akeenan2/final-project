@@ -75,35 +75,3 @@ def mapper(url):
             else:
                 key_words[word] = 1
     return key_words
-
-URL = ''
-OUTPUT = False
-
-# main execution
-if __name__ == '__main__':
-    # user input
-    try:
-        opts,args = getopt.getopt(sys.argv[1:], "u:oh")
-    except getopt.GetoptError as err:
-        print err
-        usage()
-
-    for o,a in opts:
-        if o == '-u':
-            URL = a
-        elif o == '-o':
-            OUTPUT = True
-        else:
-            usage(1)
-
-    # if no url or url not in the db
-    if URL == '' or URL not in db.url_map:
-        usage(1)
-
-    # run algorithm
-    words = mapper(URL)
-    
-    # output to stdout
-    if OUTPUT:
-        for word,count in words.iteritems():
-            print word + ' ' + str(count)
