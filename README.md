@@ -16,7 +16,7 @@ For the program to fully compile, the lxml and requests libraries are required, 
 
     pip install requests
 
-If in a virtual environment, then a **sudo** is not requiered; otherwise, precede any **pip install** commands with **sudo**.
+If in a virtual environment, then a **sudo** is not required; otherwise, precede any **pip install** commands with **sudo**.
 
 To run the scripts that create graphs, the matplotlib and numpy libraries are required. Install with:
 
