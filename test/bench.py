@@ -4,52 +4,39 @@ import sys
 sys.path.insert(0,'src')
 import getopt
 from mapper import mapper
-from sort import sort
 import db
 
-
 def usage(status=0):
-    print '''Usage: ./bench.py [options]...
+    print '''Usage: ./sort_test.py [options]...
 
 Options:
-    -u URL      url of website to analyze
-    -s SORT     sorting algorithm [quick|merge|bst]
-    -o          output the data
     -h          help'''
     sys.exit(status)
 
 # default values
-SORT = ''
-URL = ''
+SORTS = ['default','quick','merge','bst']
 OUTPUT = False
 
 # main execution
 if __name__ == '__main__':
     # user input
     try:
-        opts,args = getopt.getopt(sys.argv[1:], "u:s:oh")
+        opts,args = getopt.getopt(sys.argv[1:], "oh")
     except getopt.GetoptError as err:
         print err
         usage()
 
     for o,a in opts:
-        if o == '-u':
-            URL = a
-        elif o == '-s':
-            SORT = a
-        elif o == '-o':
+        if o == '-o':
             OUTPUT = True
         else:
             usage(1)
 
-    if URL == '' or URL not in db.url_map:
-        usage(1)
-
-    # get the list of unsorted words
-    words = mapper(URL)
-    # run the sorting algorithm
-    sorted_words = sort(words,SORT)
-    # print results
-    if OUTPUT:
-        for word in sorted_words:
-            print word[0] + ' ' + str(word[1])
+    for sort in SORTS:
+        print sort + '\n'
+        for url in db.urls:
+            # run the bench script
+            if OUTPUT:
+                os.system("./src/measure ./test/bench.py -u {} -s {} -o".format(url,sort))
+            else:
+                os.system("./src/measure ./test/bench.py -u {} -s {}".format(url,sort))

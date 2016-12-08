@@ -1,11 +1,10 @@
 #!/usr/bin/env python2.7
 import os
 import sys
-sys.path.insert(0,'../src')
+sys.path.insert(0,'src')
 import getopt
-from mapper import *
+from mapper import mapper
 import db
-
 
 def usage(status=0):
     print '''Usage: ./sort_test.py [options]...
@@ -15,10 +14,17 @@ Options:
     sys.exit(status)
 
 # default values
-SORT = ''
-URL = ''
+SORTS = [
+    'default',
+    'quick',
+    'merge',
+    'bst'
+]
 OUTPUT = False
-
+TEST_URLS = {
+    "sample_links":"http://michaelsills.com/sample_links.html",
+    "sample_links_2":"http://michaelsills.com/sample_links_2.html"
+}
 # main execution
 if __name__ == '__main__':
     # user input
@@ -31,13 +37,13 @@ if __name__ == '__main__':
     for o,a in opts:
         usage(1)
 
-    for url in db.urls:
-        # get the unsorted words
-        words = mapper(url)
-        for sort in SORT:  
-            # run the sorting algorithm
-            sorted_words = sort(words,SORT)
-    # print results
-    if OUTPUT:
-        for word in sorted_words:
-            print word[0] + ' ' + str(word[1])
+    # generate files
+    for sort in SORTS:
+        for name,url in TEST_URLS.iteritems():
+            # run the sort script
+            os.system("./test/run_sort.py -u {} -s {} -o > data/{}_{}_test.txt".format(url,sort,sort,name))
+
+    # check sort
+    for sort in SORTS:
+        for name,url in TEST_URLS.iteritems():
+            os.system("./test/check_sort.py -f data/{}_{}_test.txt".format(sort,name))

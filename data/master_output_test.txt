@@ -13,8 +13,8 @@ court 1
 dissenter 1
 dog 1
 donald 2
-earth 1
 e.p.a 1
+earth 1
 epa 1
 find 1
 general 1

@@ -4,6 +4,7 @@ import sys
 sys.path.insert(0,'src')
 import getopt
 import db
+from master import master
 
 def usage(status=0):
     print '''Usage: ./master_test.py [options]...
