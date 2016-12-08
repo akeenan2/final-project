@@ -9,7 +9,7 @@ import db
 
 
 def usage(status=0):
-    print '''Usage: ./bench.py [options]...
+    print '''Usage: ./run_sort.py [options]...
 
 Options:
     -u URL      url of website to analyze

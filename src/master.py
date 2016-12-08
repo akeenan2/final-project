@@ -73,7 +73,7 @@ if __name__ == '__main__':
         for word in words:
             print word[0] + ' ' + str(word[1])
     # pull out top 10 most frequent words
-    #print "Top Words:"
+    # print "Top Words:"
     trending = words[:-6:-1]
     for word in trending:
     	if PRINT:

@@ -3,7 +3,7 @@ import os
 import sys
 sys.path.insert(0,'src')
 import getopt
-from mapper import *
+from mapper import mapper
 import db
 
 
