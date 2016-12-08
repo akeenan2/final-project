@@ -76,8 +76,5 @@ if __name__ == '__main__':
     # pull out most frequent words
     trending = words[:-1*(NUM+1):-1]
     for word in trending:
-    	if PRINT:
-    		print word[0] + ' ' + str(word[1])
-    	else:
-    		print word[0]
+    	print word[0] + ' ' + str(word[1])
     search(trending) 
