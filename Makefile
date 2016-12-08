@@ -1,7 +1,4 @@
-test: setup test-mapper test-sort test-master
-
-setup:
-	gcc -c src/measure.cpp -o src/measure
+test: test-mapper test-sort test-master
 
 test-mapper:
 	@echo Testing mapper...
@@ -21,9 +18,5 @@ test-master:
 	@./test/check_sort.py -f master_output_test.txt
 	@rm data/master_output_test.txt
 
-clean:
-	rm src/measure data/*_test.txt
-
 bench:
-	@echo Running sorting bench...
 	@./test/bench.py
