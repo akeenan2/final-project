@@ -14,8 +14,7 @@ dissenter 1
 dog 1
 donald 2
 earth 1
-e.p.a 1
-epa 1
+epa 2
 find 1
 general 1
 harbor 1
