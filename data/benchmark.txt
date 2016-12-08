@@ -1,0 +1,247 @@
+default
+http://www.wsj.com/
+0.209488 seconds    25.062500 Mbytes
+0.204246 seconds    25.238281 Mbytes
+0.204086 seconds    24.871094 Mbytes
+0.209345 seconds    25.156250 Mbytes
+0.221596 seconds    25.027344 Mbytes
+http://www.huffingtonpost.com/
+0.183776 seconds    21.425781 Mbytes
+0.180223 seconds    21.417969 Mbytes
+0.185849 seconds    21.410156 Mbytes
+0.185435 seconds    21.578125 Mbytes
+0.186510 seconds    21.558594 Mbytes
+https://www.washingtonpost.com/
+0.213627 seconds    23.027344 Mbytes
+0.214736 seconds    23.003906 Mbytes
+0.213623 seconds    22.519531 Mbytes
+0.212893 seconds    22.535156 Mbytes
+0.214663 seconds    22.570312 Mbytes
+http://www.nytimes.com/
+0.188382 seconds    21.578125 Mbytes
+0.189944 seconds    21.644531 Mbytes
+0.183098 seconds    21.679688 Mbytes
+0.187891 seconds    21.660156 Mbytes
+0.184402 seconds    21.523438 Mbytes
+https://www.theguardian.com/us/
+0.260598 seconds    25.988281 Mbytes
+0.266627 seconds    25.347656 Mbytes
+0.261275 seconds    25.339844 Mbytes
+0.259164 seconds    25.335938 Mbytes
+0.265691 seconds    25.222656 Mbytes
+http://www.usatoday.com/
+0.202965 seconds    22.238281 Mbytes
+0.197568 seconds    22.273438 Mbytes
+0.209876 seconds    22.285156 Mbytes
+0.189324 seconds    22.359375 Mbytes
+0.190679 seconds    22.054688 Mbytes
+http://www.dailymail.co.uk/ushome/index.html/
+0.252429 seconds    28.738281 Mbytes
+0.250025 seconds    28.699219 Mbytes
+0.252039 seconds    28.597656 Mbytes
+0.248008 seconds    28.722656 Mbytes
+0.255548 seconds    28.726562 Mbytes
+http://abcnews.go.com/
+0.193779 seconds    21.863281 Mbytes
+0.192318 seconds    21.882812 Mbytes
+0.188829 seconds    21.832031 Mbytes
+0.188683 seconds    21.824219 Mbytes
+0.197706 seconds    21.855469 Mbytes
+https://news.google.com/
+0.269907 seconds    25.691406 Mbytes
+0.259495 seconds    26.187500 Mbytes
+0.255443 seconds    25.550781 Mbytes
+0.266197 seconds    25.750000 Mbytes
+0.269315 seconds    26.605469 Mbytes
+http://www.forbes.com/
+0.191458 seconds    21.050781 Mbytes
+0.195259 seconds    21.011719 Mbytes
+0.191805 seconds    21.109375 Mbytes
+0.206546 seconds    20.972656 Mbytes
+0.207822 seconds    20.914062 Mbytes
+
+quick
+http://www.wsj.com/
+0.274905 seconds    25.449219 Mbytes
+0.303754 seconds    25.113281 Mbytes
+0.259974 seconds    25.312500 Mbytes
+0.268177 seconds    25.433594 Mbytes
+0.266064 seconds    25.097656 Mbytes
+http://www.huffingtonpost.com/
+0.221459 seconds    22.074219 Mbytes
+0.248006 seconds    21.882812 Mbytes
+0.335728 seconds    22.058594 Mbytes
+0.275416 seconds    21.941406 Mbytes
+0.248703 seconds    22.105469 Mbytes
+https://www.washingtonpost.com/
+0.231610 seconds    22.765625 Mbytes
+0.312430 seconds    22.957031 Mbytes
+0.287622 seconds    22.582031 Mbytes
+0.219514 seconds    22.332031 Mbytes
+0.226748 seconds    22.804688 Mbytes
+http://www.nytimes.com/
+0.220974 seconds    22.394531 Mbytes
+0.206275 seconds    22.195312 Mbytes
+0.210444 seconds    22.402344 Mbytes
+0.208441 seconds    22.015625 Mbytes
+0.220932 seconds    22.242188 Mbytes
+https://www.theguardian.com/us/
+0.287346 seconds    26.644531 Mbytes
+0.303645 seconds    26.050781 Mbytes
+0.359431 seconds    26.320312 Mbytes
+0.335203 seconds    25.531250 Mbytes
+0.308781 seconds    25.972656 Mbytes
+http://www.usatoday.com/
+0.225205 seconds    22.371094 Mbytes
+0.224550 seconds    22.609375 Mbytes
+0.219319 seconds    22.488281 Mbytes
+0.225344 seconds    22.476562 Mbytes
+0.205731 seconds    22.378906 Mbytes
+http://www.dailymail.co.uk/ushome/index.html/
+0.452872 seconds    33.812500 Mbytes
+0.488541 seconds    33.578125 Mbytes
+0.463216 seconds    34.476562 Mbytes
+0.459682 seconds    33.574219 Mbytes
+0.456428 seconds    34.109375 Mbytes
+http://abcnews.go.com/
+0.239033 seconds    22.476562 Mbytes
+0.266161 seconds    22.660156 Mbytes
+0.263182 seconds    22.925781 Mbytes
+0.228206 seconds    22.660156 Mbytes
+0.246205 seconds    22.554688 Mbytes
+https://news.google.com/
+0.288376 seconds    25.902344 Mbytes
+0.271092 seconds    26.089844 Mbytes
+0.276198 seconds    25.984375 Mbytes
+0.273221 seconds    26.011719 Mbytes
+0.272951 seconds    25.753906 Mbytes
+http://www.forbes.com/
+0.196971 seconds    20.816406 Mbytes
+0.205412 seconds    20.914062 Mbytes
+0.188631 seconds    20.968750 Mbytes
+0.177037 seconds    20.761719 Mbytes
+0.180354 seconds    20.921875 Mbytes
+
+merge
+http://www.wsj.com/
+0.216007 seconds    25.027344 Mbytes
+0.215212 seconds    25.195312 Mbytes
+0.210728 seconds    24.996094 Mbytes
+0.214803 seconds    25.152344 Mbytes
+0.214212 seconds    24.750000 Mbytes
+http://www.huffingtonpost.com/
+0.189682 seconds    21.472656 Mbytes
+0.189116 seconds    21.644531 Mbytes
+0.181465 seconds    21.464844 Mbytes
+0.189465 seconds    21.621094 Mbytes
+0.185298 seconds    21.546875 Mbytes
+https://www.washingtonpost.com/
+0.210302 seconds    22.191406 Mbytes
+0.213907 seconds    22.195312 Mbytes
+0.219518 seconds    22.925781 Mbytes
+0.230593 seconds    22.816406 Mbytes
+0.217877 seconds    23.269531 Mbytes
+http://www.nytimes.com/
+0.213922 seconds    21.847656 Mbytes
+0.205904 seconds    21.746094 Mbytes
+0.202692 seconds    21.855469 Mbytes
+0.205045 seconds    21.546875 Mbytes
+0.215886 seconds    21.800781 Mbytes
+https://www.theguardian.com/us/
+0.276678 seconds    25.328125 Mbytes
+0.272378 seconds    25.597656 Mbytes
+0.269155 seconds    25.332031 Mbytes
+0.275113 seconds    25.289062 Mbytes
+0.282914 seconds    25.621094 Mbytes
+http://www.usatoday.com/
+0.217166 seconds    22.355469 Mbytes
+0.222814 seconds    22.269531 Mbytes
+0.210155 seconds    22.312500 Mbytes
+0.228090 seconds    22.265625 Mbytes
+0.241038 seconds    22.304688 Mbytes
+http://www.dailymail.co.uk/ushome/index.html/
+0.288137 seconds    28.863281 Mbytes
+0.293386 seconds    28.687500 Mbytes
+0.294488 seconds    28.835938 Mbytes
+0.275046 seconds    28.710938 Mbytes
+0.272893 seconds    28.753906 Mbytes
+http://abcnews.go.com/
+0.221109 seconds    21.875000 Mbytes
+0.209476 seconds    21.675781 Mbytes
+0.194333 seconds    21.609375 Mbytes
+0.200007 seconds    21.628906 Mbytes
+0.202593 seconds    21.671875 Mbytes
+https://news.google.com/
+0.271849 seconds    25.582031 Mbytes
+0.257554 seconds    25.609375 Mbytes
+0.260960 seconds    26.316406 Mbytes
+0.280704 seconds    25.550781 Mbytes
+0.266980 seconds    25.386719 Mbytes
+http://www.forbes.com/
+0.187590 seconds    20.964844 Mbytes
+0.185912 seconds    20.890625 Mbytes
+0.180872 seconds    20.832031 Mbytes
+0.180376 seconds    20.855469 Mbytes
+0.180615 seconds    20.886719 Mbytes
+
+bst
+http://www.wsj.com/
+0.267643 seconds    25.101562 Mbytes
+0.257128 seconds    25.046875 Mbytes
+0.264456 seconds    24.949219 Mbytes
+0.265279 seconds    25.027344 Mbytes
+0.271747 seconds    25.101562 Mbytes
+http://www.huffingtonpost.com/
+0.217690 seconds    21.988281 Mbytes
+0.223002 seconds    21.984375 Mbytes
+0.223915 seconds    22.015625 Mbytes
+0.216122 seconds    22.062500 Mbytes
+0.214914 seconds    22.050781 Mbytes
+https://www.washingtonpost.com/
+0.222441 seconds    22.597656 Mbytes
+0.225505 seconds    22.566406 Mbytes
+0.223007 seconds    22.515625 Mbytes
+0.220531 seconds    22.964844 Mbytes
+0.219024 seconds    22.625000 Mbytes
+http://www.nytimes.com/
+0.224325 seconds    22.074219 Mbytes
+0.226504 seconds    22.109375 Mbytes
+0.227930 seconds    22.113281 Mbytes
+0.219719 seconds    22.000000 Mbytes
+0.233340 seconds    22.121094 Mbytes
+https://www.theguardian.com/us/
+0.319634 seconds    25.585938 Mbytes
+0.294525 seconds    25.656250 Mbytes
+0.287264 seconds    25.593750 Mbytes
+0.296883 seconds    25.648438 Mbytes
+0.298974 seconds    25.667969 Mbytes
+http://www.usatoday.com/
+0.210268 seconds    22.296875 Mbytes
+0.203518 seconds    22.550781 Mbytes
+0.211817 seconds    22.332031 Mbytes
+0.199593 seconds    22.316406 Mbytes
+0.211421 seconds    22.421875 Mbytes
+http://www.dailymail.co.uk/ushome/index.html/
+0.562365 seconds    29.789062 Mbytes
+0.554855 seconds    30.062500 Mbytes
+0.537213 seconds    29.777344 Mbytes
+0.539501 seconds    29.960938 Mbytes
+0.549832 seconds    29.988281 Mbytes
+http://abcnews.go.com/
+0.244372 seconds    22.367188 Mbytes
+0.241234 seconds    22.085938 Mbytes
+0.249952 seconds    22.406250 Mbytes
+0.239347 seconds    22.140625 Mbytes
+0.242629 seconds    22.242188 Mbytes
+https://news.google.com/
+0.267659 seconds    25.742188 Mbytes
+0.274404 seconds    25.839844 Mbytes
+0.288377 seconds    26.742188 Mbytes
+0.295348 seconds    25.878906 Mbytes
+0.317307 seconds    25.929688 Mbytes
+http://www.forbes.com/
+0.206590 seconds    20.835938 Mbytes
+0.185616 seconds    20.777344 Mbytes
+0.200962 seconds    20.929688 Mbytes
+0.183986 seconds    21.035156 Mbytes
+0.197906 seconds    21.031250 Mbytes

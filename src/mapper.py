@@ -7,15 +7,6 @@ import unicodedata
 import getopt
 import db
 
-def usage(status=0):
-    print '''Usage: ./mapper.py [options]...
-
-Options:
-    -u URL      path of website to analyze (ex: http://www.wsj.com/)
-    -o          output data to stdout
-    -h          help'''
-    sys.exit(status)
-
 # url - url of website being scraped
 # headline_paths - a list of xpaths to scrape all the headlines
 # link_paths - a list of associated xpaths to scrape all urls to those headlines
@@ -31,6 +22,7 @@ def scraper(url,headline_paths,link_paths):
     # select all linked headers
     for path in headline_paths:
         headlines = headlines + tree.xpath(path)
+        print tree.xpath(path)
     for link in link_paths:
         links = links + tree.xpath(link)
 
