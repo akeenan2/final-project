@@ -31,6 +31,17 @@ All commands are to be run within the base *final-project* folder. To start the 
 
     ./src/master.py
 
+A series of flags can be added to this command in order to customize the output, which can be viewed by running:
+
+    ./src/master.py -h
+    Usage: ./master.py [options]...
+
+    Options:
+        -o          output data to stdout
+        -n NUM      generate NUM keywords
+        -d          disable the search for headlines
+        -t          print the top words
+        -h          help
 
 To make the graph of current top words, the result of which will be stored in the *graphs* folder, run the command:
 
