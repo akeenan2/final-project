@@ -13,10 +13,10 @@ def usage(status=0):
     print '''Usage: ./master.py [options]...
 
 Options:
-    -o          output data to stdout
-    -n NUM      generate NUM keywords
+    -o          output all keywords found with their counts
+    -n NUM      use NUM keywords in search
     -d          disable the search for headlines
-    -t          print the top words
+    -t          print the top words with their counts
     -h          help'''
     sys.exit(status)
 
@@ -24,7 +24,7 @@ def search(keywords):
     url = "https://news.google.com/#q="
     for word in keywords[:-1]:
         url = url + word[0] + '+'
-    url = url + word[0]
+    url = url + keywords[-1][0]
     # fetch the website
     page = requests.get(url)
     tree = html.fromstring(page.content)
