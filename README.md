@@ -37,10 +37,15 @@ A series of flags can be added to this command in order to customize the output,
     Usage: ./master.py [options]...
 
     Options:
-        -o          output data to stdout
-        -n NUM      generate NUM keywords
+        -n NUM      use NUM keywords in search (default 5)
+        -l NUM      output NUM links (default 2)
+
+        -g          google search on keywords (default custom-built search)
+
+        -o          output all keywords found with their counts
+        -t          print the top words with their counts
         -d          disable the search for headlines
-        -t          print the top words
+
         -h          help
 
 To make the graph of current top words, the result of which will be stored in the *graphs* folder, run the command:
