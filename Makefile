@@ -1,4 +1,4 @@
-test: test-mapper test-sort test-master
+test: test-mapper test-sort test-master test-lookup
 
 test-mapper:
 	@echo Testing mapper...
@@ -18,6 +18,12 @@ test-master:
 	@./test/master_test.py > data/master_output_test.txt
 	@./test/check_sort.py -f data/master_output_test.txt
 	@rm data/master_output_test.txt
+
+test-lookup:
+	@echo Testing lookup...
+	@./test/lookup_test.py > data/lookup_output_test.txt
+	@diff --suppress-common-lines -y data/lookup_output_test.txt data/lookup_output.txt
+	@ rm data/lookup_output_test.txt
 
 bench:
 	@./test/bench.py

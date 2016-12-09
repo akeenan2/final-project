@@ -7,10 +7,7 @@ from mapper import mapper
 import db
 
 def usage(status=0):
-    print '''Usage: ./sort_test.py [options]...
-
-Options:
-    -h          help'''
+    print '''Usage: ./sort_test.py'''
     sys.exit(status)
 
 # default values

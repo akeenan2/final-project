@@ -6,12 +6,7 @@ import getopt
 from master import master
 
 def usage(status=0):
-    print '''Usage: ./master_test.py [options]...
-
-Options:
-    -u URLS     list of urls 
-    -o          output data to stdout
-    -h          help'''
+    print '''Usage: ./master_test.p'''
     sys.exit(status)
     
 # main execution
@@ -27,10 +22,11 @@ if __name__ == '__main__':
         usage(1)
 
     # call master function with demo urls
-    words = master([
+    keywords = master([
         "http://michaelsills.com/sample_links.html",
         "http://michaelsills.com/sample_links_2.html"
     ])
+    
     # print results
-    for word in words:
+    for word in keywords:
         print word[0] + ' ' + str(word[1])

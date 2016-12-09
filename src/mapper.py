@@ -32,7 +32,7 @@ def scraper(url,headline_paths,link_paths):
     # create a map of headlines to links
     articles = dict()
     for headline,link in zip(headlines,links):
-        articles[headline.lower().strip()] = link.lower()
+        articles[headline.strip()] = link.lower()
 
     # return the dictionary
     return articles
@@ -43,6 +43,8 @@ def sanitize(headline):
     global common_words
     words = []
     for word in headline.split(' '):
+        # convert to lowercase
+        word = word.lower()
         # ignore unicode characters
         word = word.encode('ascii','ignore')
         # clean off leading and trailing punctuation
