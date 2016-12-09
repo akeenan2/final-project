@@ -1,6 +1,6 @@
 **akeenan2** - Ann Keenan
 
-tests/build, mapper.py
+Wrote the test scripts and implemented the test suite. Build, mapper.py
 
 **cbadart** - Catherine Badart
 
@@ -11,3 +11,5 @@ merge sort, quick sort, sort_
 master.py, bst
 
 **mhutchi2** - Michael Hutchinson
+
+debugging
