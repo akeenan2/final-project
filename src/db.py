@@ -10,7 +10,6 @@ urls = [
     "http://www.huffingtonpost.com/",
     "http://abcnews.go.com/",
     "http://www.wsj.com/",
-    "http://www.dailymail.co.uk/ushome/index.html/"
 ]
 
 # map of url to xpath for the headline and the associated url
@@ -25,7 +24,6 @@ url_map = {
     "http://www.nytimes.com/":"//h2[contains(@class,'story-heading')]/a/text();//h2[contains(@class,'story-heading')]/a/@href",
     "https://www.theguardian.com/us/":"//h2[contains(@class,'fc-item__title')]/a/span/span[contains(@class,'js-headline-text')]/text();//h2[contains(@class,'fc-item__title')]/a[contains(@class,'fc-item__link')]/@href",
     "http://www.usatoday.com/":"//a[contains(@class,'js-asset-link')]/div/p[contains(@class,'js-asset-headline')]/text()|//a[contains(@class,'js-asset-link')]/span[contains(@class,'js-asset-headline')]/text();//a[contains(@class,'js-asset-link')]/@href|//a[contains(@class,'js-asset-link')]/span[contains(@class,'js-asset-headline')]/text()",
-    "http://www.dailymail.co.uk/ushome/index.html/":"//h2[contains(@class,'linkro-darkred')]/a/text();//h2[contains(@class,'linkro-darkred')]/a/@href",
     "http://abcnews.go.com/":"//div[contains(@class,'headlines-li-div')]/h1/a/text()|//div[contains(@class,'caption-wrapper')]/h1/a/text();//div[contains(@class,'headlines-li-div')]/h1/a/@href|//div[contains(@class,'caption-wrapper')]/h1/a/@href",
     "https://news.google.com/":"//h2[contains(@class,'esc-lead-article-title')]/a/span/text();//h2[contains(@class,'esc-lead-article-title')]/a/@href",
     "http://www.forbes.com/":"//h4[contains(@class,'editable-hed')]/a/text()|//li[contains(@class,'edittools-contentitem')]/h3/a/text();//h4[contains(@class,'editable-hed')]/a/@href|//li[contains(@class,'edittools-contentitem')]/h3/a/@href",
@@ -43,4 +41,9 @@ common_words = [
     "says","will","won't","can","can't","could","couldn't","they","they're","make","not","no",
     "nor","all","only","than","then","been","very","my","mine","me","may","new","one","two","has",
     "him","woman","man","have","had",
+]
+
+# spam urls
+spam = [
+    "pubx.co"
 ]

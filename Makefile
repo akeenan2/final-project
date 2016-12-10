@@ -31,3 +31,6 @@ bench:
 key-words:
 	@./src/master.py -t -d -n 11 > data/top-words.txt
 	@./graph-scripts/top-words.py
+
+clean:
+	@rm data/*_test.txt
